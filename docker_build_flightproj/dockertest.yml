@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  - name: copying script to server
+    copy:
+          src: /test/ansible_playbooks/script.sh
+          dest: /script.sh
+          mode: 0777
+
+  - name: execute the script
+    command: sh script.sh
+
+
+
+
